@@ -8,7 +8,7 @@ export const Homepage = () => {
       <LogoGraphic />
       <h1>Charlie Minton</h1>
       <h2>Freelance Photographer</h2>
-      <Link to="/gallery" className="homepage-link">
+      <Link to="/charlie-minton/gallery" className="homepage-link">
         View Gallery
       </Link>
     </div>
