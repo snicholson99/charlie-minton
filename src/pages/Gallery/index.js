@@ -30,7 +30,7 @@ export const Gallery = () => {
         ) {
           return (
             <Link
-              to={`/gallery/${event.fields.Name.toLowerCase()}`}
+              to={`/charlie-minton/gallery/${event.fields.Name.toLowerCase()}`}
               key={event.id}
               className="gallery-event-item"
               data-event={event.fields.Name}

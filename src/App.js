@@ -11,10 +11,13 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/gallery" element={<Gallery />} />
-        <Route path={`/gallery/:eventId`} element={<GalleryItems />} />
-        <Route exact path="basket" element={<Basket />} />
+        <Route exact path="/charlie-minton" element={<Homepage />} />
+        <Route exact path="/charlie-minton/gallery" element={<Gallery />} />
+        <Route
+          path={`/charlie-minton/gallery/:eventId`}
+          element={<GalleryItems />}
+        />
+        <Route exact path="/charlie-minton/basket" element={<Basket />} />
       </Routes>
     </div>
   );
