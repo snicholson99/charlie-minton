@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/charlie-minton/static/css/main.6b6fb68a.css",
-    "main.js": "/charlie-minton/static/js/main.87151e09.js",
+    "main.js": "/charlie-minton/static/js/main.0f441b7d.js",
     "static/media/logo.svg": "/charlie-minton/static/media/logo.007e630638395d448c5b37ac46f1bde0.svg",
     "index.html": "/charlie-minton/index.html",
     "main.6b6fb68a.css.map": "/charlie-minton/static/css/main.6b6fb68a.css.map",
-    "main.87151e09.js.map": "/charlie-minton/static/js/main.87151e09.js.map"
+    "main.0f441b7d.js.map": "/charlie-minton/static/js/main.0f441b7d.js.map"
   },
   "entrypoints": [
     "static/css/main.6b6fb68a.css",
-    "static/js/main.87151e09.js"
+    "static/js/main.0f441b7d.js"
   ]
 }
