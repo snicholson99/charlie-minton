@@ -1,0 +1,41 @@
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.98);
+  z-index: 20;
+  padding: 8%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#close-modal-icon {
+  right: 10%;
+  top: 0px;
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#modal img {
+  max-width: 100%;
+  max-height: 68vh;
+}
+
+#add-to-basket {
+  position: absolute;
+  bottom: 10vh;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #00a8cc;
+  color: #fff;
+}
+
+#request-purchase:hover {
+  filter: brightness(1.2);
+}

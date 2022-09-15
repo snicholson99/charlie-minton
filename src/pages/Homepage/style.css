@@ -1,0 +1,51 @@
+#homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#homepage #logo-graphic {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#homepage img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: 10% 80%;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.4);
+  z-index: 0;
+}
+
+#homepage h1,
+#homepage h2 {
+  color: white;
+  z-index: 1;
+}
+
+#homepage h1 {
+  font-size: 2.5em;
+  margin: 0 0 20px;
+}
+
+#homepage h2 {
+  margin: 20px 0 0;
+}
+
+#homepage .homepage-link {
+  margin-top: 40px;
+  position: relative;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #00a8cc;
+  color: #fff;
+}
