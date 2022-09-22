@@ -3,7 +3,6 @@ import { LoadingSpinner } from "../../components/LoadingSpinner";
 import "./style.css";
 
 export const Basket = () => {
-  const assetIds = JSON.parse(sessionStorage.getItem("c_minton_basket"));
   const [isLoading, setIsLoading] = useState(false);
   const [assets, setAssets] = useState([]);
   const [name, setName] = useState("");
@@ -11,6 +10,11 @@ export const Basket = () => {
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
+    fetchResults();
+  }, []);
+
+  const fetchResults = () => {
+    const assetIds = JSON.parse(sessionStorage.getItem("c_minton_basket"));
     setIsLoading(true);
     fetch(
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_KEY}/Gallery?api_key=${process.env.REACT_APP_AIRTABLE_API_KEY}`
@@ -27,9 +31,13 @@ export const Basket = () => {
       .catch((err) => {
         console.error("airtable fetch failed: ", err);
       });
-  }, []);
+  };
 
   const onRequestPurchaseClick = () => {
+    const assetIds = JSON.parse(sessionStorage.getItem("c_minton_basket"));
+    if (!name.length || !email.length) {
+      return alert("Please fill in your name and email.");
+    }
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -55,6 +63,17 @@ export const Basket = () => {
       .then(() => alert("Your request was successful!"));
   };
 
+  const onRemoveClick = (recordId) => {
+    const items = JSON.parse(sessionStorage.getItem("c_minton_basket"));
+    console.log(items);
+    const newItems = items.filter((item) => item !== recordId);
+    sessionStorage.setItem("c_minton_basket", JSON.stringify(newItems));
+    fetchResults();
+    // console.log(newItems);
+  };
+
+  // console.log(assetIds);
+
   return (
     <div id="basket" className="page">
       {isLoading && !assets.length && <LoadingSpinner />}
@@ -68,7 +87,7 @@ export const Basket = () => {
             <img src={asset.fields.Image[0].url} />
             <div className="basket-item-content">
               <p key={asset.id}>{asset.fields.Event} Photo</p>
-              <button>Remove</button>
+              <button onClick={() => onRemoveClick(asset.id)}>Remove</button>
             </div>
           </div>
         ))}

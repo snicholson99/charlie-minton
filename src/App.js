@@ -17,7 +17,7 @@ const App = () => {
           path={`/charlie-minton/gallery/:eventId`}
           element={<GalleryItems />}
         />
-        <Route exact path="/charlie-minton/basket" element={<Basket />} />
+        <Route path="/charlie-minton/basket" element={<Basket />} />
       </Routes>
     </div>
   );
