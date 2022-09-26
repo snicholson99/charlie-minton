@@ -1,4 +1,4 @@
-#gallery-items {
+#gallery-items-inner-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   grid-template-rows: repeat(auto-fill, 150px);
@@ -22,4 +22,9 @@
 
 .gallery-item:hover {
   filter: brightness(1.2);
+}
+
+#empty-gallery-items-text {
+  text-align: center;
+  color: white;
 }

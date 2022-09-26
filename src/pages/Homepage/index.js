@@ -11,6 +11,15 @@ export const Homepage = () => {
       <Link to="/charlie-minton/gallery" className="homepage-link">
         View Gallery
       </Link>
+      <a
+        href="https://www.instagram.com/charlie.minton/"
+        target="_blank"
+        rel="noreferrer"
+        id="homepage-social"
+      >
+        <i className="fa-brands fa-instagram"></i>
+        <p>Follow me on Instagram</p>
+      </a>
     </div>
   );
 };

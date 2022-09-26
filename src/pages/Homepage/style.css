@@ -6,7 +6,7 @@
 }
 
 #homepage #logo-graphic {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   width: 100%;
   max-width: 400px;
 }
@@ -48,4 +48,16 @@
   cursor: pointer;
   background-color: #00a8cc;
   color: #fff;
+}
+
+#homepage-social {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  color: #00a8cc;
+  /* color: #99edff; */
+}
+
+#homepage-social i {
+  margin-right: 6px;
 }

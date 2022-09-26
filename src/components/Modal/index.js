@@ -1,7 +1,8 @@
 import "./style.css";
 
 export const Modal = (props) => {
-  const { selectedAssetId, selectedAssetImg, onCloseModal } = props;
+  const { selectedAssetId, selectedAssetImg, selectedAssetName, onCloseModal } =
+    props;
 
   const onAddToBasketClick = () => {
     const currBasket = sessionStorage.getItem("c_minton_basket");
@@ -17,6 +18,7 @@ export const Modal = (props) => {
         ✕
       </p>
       <img src={selectedAssetImg} alt="" />
+      {selectedAssetName && <p>{selectedAssetName}</p>}
       <button id="add-to-basket" onClick={onAddToBasketClick}>
         Add To Basket
       </button>

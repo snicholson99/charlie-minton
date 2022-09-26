@@ -46,6 +46,11 @@ export const Basket = () => {
           {
             fields: {
               Name: name,
+              "Requested Image Names": assets
+                .map((item) => {
+                  return item.fields.Name;
+                })
+                .join(", "),
               "Requested Image Ids": assetIds.toString(),
               Notes: notes,
               Email: email,
@@ -65,14 +70,10 @@ export const Basket = () => {
 
   const onRemoveClick = (recordId) => {
     const items = JSON.parse(sessionStorage.getItem("c_minton_basket"));
-    console.log(items);
     const newItems = items.filter((item) => item !== recordId);
     sessionStorage.setItem("c_minton_basket", JSON.stringify(newItems));
     fetchResults();
-    // console.log(newItems);
   };
-
-  // console.log(assetIds);
 
   return (
     <div id="basket" className="page">
@@ -84,9 +85,9 @@ export const Basket = () => {
         )}
         {assets?.map((asset) => (
           <div className="basket-item" key={asset.id}>
-            <img src={asset.fields.Image[0].url} />
+            <img src={asset.fields.Image[0].url} alt={asset.fields.Event} />
             <div className="basket-item-content">
-              <p key={asset.id}>{asset.fields.Event} Photo</p>
+              <p>{asset.fields?.Name}</p>
               <button onClick={() => onRemoveClick(asset.id)}>Remove</button>
             </div>
           </div>

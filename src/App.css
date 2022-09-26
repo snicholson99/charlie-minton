@@ -14,11 +14,16 @@ button {
     "Lucida Sans", Arial, sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 .page {
   position: relative;
   top: 100px;
   min-height: calc(100vh - 100px);
   background-color: #27496d;
+  /* background-color: #1d3049; */
   padding: 20px 4%;
 }
 
