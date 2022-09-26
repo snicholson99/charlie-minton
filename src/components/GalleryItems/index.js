@@ -18,10 +18,14 @@ export const GalleryItems = () => {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        const newData = data.records.filter(
-          (el) => el.fields.Event.toLowerCase() === eventId
-        );
-        setGalleryData(newData.reverse());
+        if (!!data.length) {
+          const newData = data.records.filter(
+            (el) => el.fields.Event.toLowerCase() === eventId
+          );
+          setGalleryData(newData.reverse());
+        } else {
+          return;
+        }
       })
       .then(() => setIsLoading(false))
       .catch((err) => {
